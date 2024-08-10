@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body
+        {
+            display: flex;
+            justify-content: center;
+        }
+        #calculator
+        {
+           height: 60vh; 
+           width:50%;
+           border: 8px solid rgb(0, 3, 158);
+           border-radius: 15px;
+           background-color: rgb(97, 255, 34);
+        }
+        #screen #display
+        {
+            height:10vh;
+            width:95%;
+            border: 4px solid hsl(310, 60%, 50%);
+            margin-top: 5vh;
+            margin-bottom: 3vh;
+            justify-content: center;
+            border-radius: 10px;
+            background-color: rgb(43, 70, 71);
+            color: antiquewhite;
+            font-size: 1.5em;
+            text-align: right;
+            font-family:'Times New Roman', Times, serif;
+        }
+        #screen
+        {
+            justify-content: center;
+            display: flex;
+            background-color: rgb(97, 255, 34);
+            border-radius: 10px;
+        }
+        #keypad
+        {
+            
+            margin-left: 4%;
+            margin-right: 4%;
+            
+        }
+
+        .button
+        {
+           height: 6vh;
+           width:22%;
+           border: 2px solid rgb(0, 0, 0);
+           border-radius: 30%;
+           font-size: 1.3em;
+           margin-left: 1%;
+           margin-right: auto;
+           margin-top: 1vh;
+           background-color: hsl(310, 60%, 50%);
+           color: hsl(180, 100%, 50%);
+           box-shadow: 3px 6px 3px hsl(0, 0%, 22%);
+           font-family:'Times New Roman', Times, serif;
+        }
+
+        .button:hover
+        {
+            background-color: hsl(310, 60%, 30%);
+            color:hsl(180, 100%, 55%);
+        }
+        .button:active
+        {
+            background-color: rgb(14, 223, 31);
+        }
+        #AC,#C,#dot,#equal
+        {
+            background-color: hsl(16, 100%, 50%);
+        }
+        #AC:hover,#C:hover,#dot:hover,#equal:hover
+        {
+            background-color: hsl(16, 99%, 36%);
+        }
+        #AC:active,#C:active,#dot:active,#equal:active
+        {
+            background-color: rgb(14, 223, 31); 
+        }
+
+        @media screen and (min-width:600px)
+        {
+            #calculator
+            {
+                width: 300px;
+                height: 70vh;
+            }
+        }
+    </style>
+
+    <script>
+
+        let allowSymbol=true;
+        let currentOperation="";
+        let operation=false;
+        function one()
+        { 
+            if (operation==true)
+            {
+                document.getElementById("display").value="1"
+                allowSymbol=true
+                operation=false;
+            }
+            else
+            {
+            disp=document.getElementById("display");
+            disp.value+="1";
+            allowSymbol=true;
+            }
+        }
+        function two()
+        {
+            if (operation==true)
+            {
+                document.getElementById("display").value="2"
+                allowSymbol=true
+                operation=false;
+            }
+            else
+            {
+            disp=document.getElementById("display");
+            disp.value+="2";
+            allowSymbol=true;
+            }
+        }
+        function three()
+        {
+            if (operation==true)
+            {
+                document.getElementById("display").value="3"
+                allowSymbol=true
+                operation=false;
+            }
+            else
+            {
+            disp=document.getElementById("display");
+            disp.value+="3";
+            allowSymbol=true;
+            }
+        }
+        function plus()
+        {
+            disp=document.getElementById("display");
+            if (allowSymbol) 
+            {
+                disp.value+="+";
+                currentOperation="+";
+            }
+            allowSymbol=false;
+            
+        }
+        function four()
+        {
+            if (operation==true)
+            {
+                document.getElementById("display").value="4"
+                allowSymbol=true
+                operation=false;
+            }
+            else
+            {
+            disp=document.getElementById("display");
+            disp.value+="4";
+            allowSymbol=true;
+            }
+        }
+        function five()
+        {
+            if (operation==true)
+            {
+                document.getElementById("display").value="5"
+                allowSymbol=true
+                operation=false;
+            }
+            else
+            {
+            disp=document.getElementById("display");
+            disp.value+="5";
+            allowSymbol=true;
+            }
+        }
+        function six()
+        {
+            if (operation==true)
+            {
+                document.getElementById("display").value="6"
+                allowSymbol=true
+                operation=false;
+            }
+            else
+            {
+            disp=document.getElementById("display");
+            disp.value+="6";
+            allowSymbol=true;
+            }
+        }
+        function minus()
+        {
+            disp=document.getElementById("display");
+            if (allowSymbol) 
+            {
+                disp.value+="-";
+                currentOperation="-";
+            }
+            allowSymbol=false;
+            
+        }
+        function seven()
+        {
+            if (operation==true)
+            {
+                document.getElementById("display").value="7"
+                allowSymbol=true
+                operation=false;
+            }
+            else
+            {
+            disp=document.getElementById("display");
+            disp.value+="7";
+            allowSymbol=true;
+            }
+        }
+        function eight()
+        {
+            if (operation==true)
+            {
+                document.getElementById("display").value="8"
+                allowSymbol=true
+                operation=false;
+            }
+            else
+            {
+            disp=document.getElementById("display");
+            disp.value+="8";
+            allowSymbol=true;
+            }
+        }
+        function nine()
+        {
+            if (operation==true)
+            {
+                document.getElementById("display").value="9"
+                allowSymbol=true
+                operation=false;
+            }
+            else
+            {
+            disp=document.getElementById("display");
+            disp.value+="9";
+            allowSymbol=true;
+            }
+        }
+        function mul()
+        {
+            disp=document.getElementById("display");
+            if (allowSymbol) 
+            {
+                disp.value+="×";
+            }
+            allowSymbol=false;
+            currentOperation="×";
+        }
+        function leftb()
+        {
+            disp=document.getElementById("display");
+            if (allowSymbol) 
+            {
+                disp.value+="(";
+            }
+            allowSymbol=false;
+        }
+        function zero()
+        {
+            if (operation==true)
+            {
+                document.getElementById("display").value="0"
+                allowSymbol=true
+                operation=false;
+            }
+            else
+            {
+            disp=document.getElementById("display");
+            disp.value+="0";
+            allowSymbol=true;
+            }
+        }
+        function rightb()
+        {
+            disp=document.getElementById("display");
+            if (allowSymbol) 
+            {
+                disp.value+=")";
+            }
+            allowSymbol=false;
+        }
+        function div()
+        {
+            disp=document.getElementById("display");
+            if (allowSymbol) 
+            {
+                disp.value+="÷";
+            }
+            allowSymbol=false;
+            currentOperation="÷";
+        }
+        function AC()
+        {
+            disp=document.getElementById("display");
+            disp.value="";
+        }
+        function C()
+        {
+            disp=document.getElementById("display");
+            disp.value=disp.value.slice(0,-1);
+        }
+        function dot()
+        {
+            disp=document.getElementById("display");
+            if (allowSymbol) 
+            {
+                disp.value+=".";
+            }
+            allowSymbol=false;
+        }
+        function equal()
+        { 
+            disp=document.getElementById("display");
+            if (currentOperation=='+') 
+            {
+             nums=disp.value.split("+");
+             a=Number (nums.pop());
+             b=Number (nums.pop());
+             disp.value=String(a+b);
+             operation=true;
+             return;
+            }
+
+            if (currentOperation=='-') 
+            {
+             nums=disp.value.split("-");
+             b=Number(nums.pop());
+             a=Number(nums.pop());
+             disp.value=String(a-b);
+             operation=true;
+             return;
+            }
+            
+            if (currentOperation=='×') 
+            {
+             nums=disp.value.split("×")
+             b=Number(nums.pop())
+             a=Number(nums.pop())
+             disp.value=String(a*b);
+             operation=true;
+             return
+            }
+
+            if (currentOperation=='÷') 
+            {
+             nums=disp.value.split("÷")
+             b=Number(nums.pop())
+             a=Number(nums.pop())
+             disp.value=String(a/b);
+             operation=true;
+             return
+            }
+    
+            
+        }
+
+    </script>
+</head>
+<body>
+
+    <div id="calculator">
+
+        <div id="screen">
+            <input type="text" id="display" autocomplete="off">
+
+        </div>
+        <br>
+        <div id="keypad">
+            <button id="1" value="1" class="button" onclick="one()">1</button>
+            <button id="2" value="2" class="button" onclick="two()">2</button>
+            <button id="3" value="3" class="button" onclick="three()">3</button>
+            <button id="+" value="+" class="button" onclick="plus()">+</button>
+            <br>
+            <button id="4" value="4" class="button" onclick="four()">4</button>
+            <button id="5" value="5" class="button" onclick="five()">5</button>
+            <button id="6" value="6" class="button" onclick="six()">6</button>
+            <button id="-" value="-" class="button" onclick="minus()">-</button>
+            <br>
+            <button id="7" value="7" class="button" onclick="seven()">7</button>
+            <button id="8" value="8" class="button" onclick="eight()">8</button>
+            <button id="9" value="9" class="button" onclick="nine()">9</button>
+            <button id="x" value="x" class="button" onclick="mul()">×</button>
+            <br>
+            <button id="(" value="(" class="button" onclick="leftb()">(</button>
+            <button id="0" value="0" class="button" onclick="zero()">0</button>
+            <button id=")" value=")" class="button" onclick="rightb()">)</button>
+            <button id="/" value="/" class="button" onclick="div()">÷</button>
+            <br>
+            <button id="AC" value="AC" class="button" onclick="AC()">AC</button>
+            <button id="C" value="C" class="button" onclick="C()">C</button>
+            <button id="dot" value="." class="button" onclick="dot()">.</button>
+            <button id="equal" value="=" class="button" onclick="equal()">=</button>
+        </div>
+
+    </div>
+    
+</body>
+</html>
